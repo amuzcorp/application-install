@@ -2,15 +2,23 @@
     "name": "amuz/application-install",
     "description": "for application download (ios/android) with Release Model",
     "type": "amuz-theme",
-    "version": "1.0.0",
-    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Xiso",
             "email": "ceo@amuz.co.kr"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "AmuzThemes\\ApplicationInstall\\": "src/"
+        }
+    },
     "extra": {
+        "laravel": {
+            "providers": [
+                "AmuzThemes\\ApplicationInstall\\ApplicationInstallThemeProvider"
+            ]
+        },
         "theme": {
             "parent": "",
             "active": true,

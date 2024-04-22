@@ -23,3 +23,13 @@ composer require amuz/application-install:dev-main
 ```shell
 composer require amuz/application-install:dev-main && rm -rf ./amuz-themes/amuz/application-install && cd ./amuz-themes/amuz && git clone https://github.com/amuzcorp/application-install
 ```
+
+
+## Migration & Config
+
+필요한경우, 설정파일 및 마이그레이션 파일을 프로젝트 루트로 게시하여 활용할 수 있습니다. 다음 태그를이용해 적절히 게시하면 됩니다.
+
+```shell
+php artisan vendor:publish --tag=application-install-config
+php artisan vendor:publish --tag=application-install-migrations
+```
