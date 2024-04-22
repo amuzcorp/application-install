@@ -1,0 +1,20 @@
+{
+    "name": "amuz/application-install",
+    "description": "for application download (ios/android) with Release Model",
+    "type": "amuz-theme",
+    "version": "1.0.0",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Xiso",
+            "email": "ceo@amuz.co.kr"
+        }
+    ],
+    "extra": {
+        "theme": {
+            "parent": "",
+            "active": true,
+            "screenshot": "screenshot.png"
+        }
+    }
+}
