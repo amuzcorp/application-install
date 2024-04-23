@@ -60,7 +60,7 @@ class AppRelease extends Resource
             Select::make(__('Os Type'),'os_type')->options([
                 "aos" => "Android",
                 "ios" => "iOS"
-            ])->filterable(),
+            ])->required()->filterable(),
             Number::make(__("Minimum OS Version"), "min_os_version")
                 ->dependsOn(['os_type'], function (Number $field, NovaRequest $request, FormData $formData) {
                     if ($formData->get('os_type') === 'aos') {
@@ -88,14 +88,14 @@ class AppRelease extends Resource
                     if ($lastRelease) {
                         $field->default($lastRelease->getAttribute('build_number') + 1);
                     }
-                }),
+                })->required(),
 
             Select::make(__('Status'),'status')->options([
                 'stable' => __('Stable Release'),
                 'beta' => __('Beta Version'),
                 'dev' => __('Development'),
                 'arch' => __('Archived')
-            ]),
+            ])->required(),
 
             Text::make(__('Install URL'),"install_url")
                 ->dependsOn(['os_type'], function (Text $field, NovaRequest $request, FormData $formData) {
@@ -105,7 +105,7 @@ class AppRelease extends Resource
                     if ($lastRelease) {
                         $field->default($lastRelease->getAttribute('install_url'));
                     }
-                })->help(__("The recommended format is '/applications/ios/1_0_0/info.plist' or '/applications/aos/1_0_0/app.apk'.")),
+                })->required()->help(__("The recommended format is '/applications/ios/1_0_0/info.plist' or '/applications/aos/1_0_0/app.apk'.")),
 
             CkEditor::make(__('Release Note'),"content"),
 
