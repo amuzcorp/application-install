@@ -16,6 +16,7 @@ use App\Nova\Resource;
 use Mostafaznv\NovaCkEditor\CkEditor;
 use PixelCreation\NovaFieldSortable\Sortable;
 use AmuzThemes\ApplicationInstall\Models\AppRelease as ResourceModel;
+use Trin4ik\NovaSwitcher\NovaSwitcher;
 
 class AppRelease extends Resource
 {
@@ -50,6 +51,8 @@ class AppRelease extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            NovaSwitcher::make(__('Public Version'),'is_public'),
 
             Sortable::make(__('Priority'),'sort_order')
                 ->onlyOnIndex(),
@@ -87,6 +90,13 @@ class AppRelease extends Resource
                     }
                 }),
 
+            Select::make(__('Status'),'status')->options([
+                'Stable' => __('Stable Release'),
+                'Beta' => __('Beta Version'),
+                'Development' => __('Development'),
+                'Archived' => __('Archived')
+            ]),
+
             URL::make(__('Install URL'),"install_url")
                 ->dependsOn(['os_type'], function (URL $field, NovaRequest $request, FormData $formData) {
                     $lastRelease = ResourceModel::query()
@@ -95,7 +105,7 @@ class AppRelease extends Resource
                     if ($lastRelease) {
                         $field->default($lastRelease->getAttribute('install_url'));
                     }
-                }),
+                })->help(__("The recommended format is '/applications/ios/1_0_0/info.plist' or '/applications/aos/1_0_0/app.apk'.")),
 
             CkEditor::make(__('Release Note'),"content"),
 

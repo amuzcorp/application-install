@@ -24,6 +24,7 @@ class AppRelease extends Model implements Sortable
     ];
 
     protected $casts = [
+        'is_public' => 'boolean',
         'publish_at' => 'datetime',
     ];
 

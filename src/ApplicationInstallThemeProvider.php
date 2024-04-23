@@ -15,6 +15,7 @@ class ApplicationInstallThemeProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->loadJsonTranslationsFrom(__DIR__."/../resources/lang");
         $this->mergeConfigFrom(__DIR__.'/config/application-install.php','application-install');
         $this->app->booted(function () {
             $this->routes();

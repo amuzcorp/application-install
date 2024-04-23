@@ -1,0 +1,17 @@
+{
+    "Public Version": "이 버전 공개",
+    "Application": "애플리케이션",
+    "AppRelease" : "앱 릴리즈",
+    "Os Type" : "운영체제",
+    "Minimum OS Version" : "지원 OS 최소버전",
+    "Version Code" : "버전코드",
+    "Build Number" : "빌드번호",
+    "Install URL" : "설치 URL",
+    "Release Note" : "릴리즈 노트",
+
+    "Stable Release" : "정식 릴리즈",
+    "Beta Version" : "베타버전",
+    "Development" : "개발버전",
+    "Archived" : "지원종료",
+    "The recommended format is '/applications/ios/1_0_0/info.plist' or '/applications/aos/1_0_0/app.apk'." : "권장되는 형태는 '/applications/ios/1_0_0/info.plist' 또는 '/applications/aos/1_0_0/app.apk' 과 같은 형태입니다."
+}

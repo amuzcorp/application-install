@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('app_releases', function (Blueprint $table) {
             $table->uuid('id')->primary();
 
+            $table->boolean('is_public')->default(false)->index();
+
             $table->string("os_type")->index();
             $table->string("min_os_version")->index();
 
@@ -23,6 +25,8 @@ return new class extends Migration
             $table->string('install_url')->nullable();
 
             $table->longText("content")->nullable();
+
+            $table->string('status')->index();
 
             $table->integer('sort_order');
 
