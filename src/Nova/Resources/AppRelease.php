@@ -97,8 +97,8 @@ class AppRelease extends Resource
                 'arch' => __('Archived')
             ]),
 
-            URL::make(__('Install URL'),"install_url")
-                ->dependsOn(['os_type'], function (URL $field, NovaRequest $request, FormData $formData) {
+            Text::make(__('Install URL'),"install_url")
+                ->dependsOn(['os_type'], function (Text $field, NovaRequest $request, FormData $formData) {
                     $lastRelease = ResourceModel::query()
                         ->where('os_type',$formData->get('os_type'))
                         ->orderBy('build_number','DESC')->first();
