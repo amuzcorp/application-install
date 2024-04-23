@@ -19,11 +19,23 @@ composer require amuz/application-install:dev-main
 
 ### for development
 
-- 테마를 개발중인 경우, 저장소를 직접 clone 하여 저장소와 연결되는것이 더 유용할 수 있습니다.
-```shell
-composer require amuz/application-install:dev-main && rm -rf ./amuz-themes/amuz/application-install && cd ./amuz-themes/amuz && git clone https://github.com/amuzcorp/application-install
+- 테마를 개발중인 경우, 저장소를 직접 `clone` 한 것처럼, 패키지를 소스설치하는것이 더 유용할 수 있습니다.
+- 테마를 `require` 하기전에 다음과같이 해당패키지의 `--prefer-source` 옵션이 적용되도록 `root` `composer.json` 의 `config` 를 수정해야합니다.
+
+```json
+"config": {
+    "preferred-install": {
+        "amuz/application-install": "source"
+    }
+}
 ```
 
+- 이렇게하면, 해당 패키지가 `git` 을통해 `clone` 된 것 처럼 작동합니다.
+- 이제 `require` 를 통해 설치하고, `composer install` 또는 `composer update` 등을 진행해도 저장소와 계속 연결이 유지되고, 변경점을 `push`할 수 있게 됩니다.
+
+```shell
+composer require amuz/application-install:dev-main
+```
 
 ## Migration & Config
 
