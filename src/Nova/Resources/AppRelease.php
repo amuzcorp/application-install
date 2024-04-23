@@ -91,10 +91,10 @@ class AppRelease extends Resource
                 }),
 
             Select::make(__('Status'),'status')->options([
-                'Stable' => __('Stable Release'),
-                'Beta' => __('Beta Version'),
-                'Development' => __('Development'),
-                'Archived' => __('Archived')
+                'stable' => __('Stable Release'),
+                'beta' => __('Beta Version'),
+                'dev' => __('Development'),
+                'arch' => __('Archived')
             ]),
 
             URL::make(__('Install URL'),"install_url")

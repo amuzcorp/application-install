@@ -10,7 +10,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "AmuzThemes\\ApplicationInstall\\": "src/"
+            "AmuzThemes\\ApplicationInstall\\": "src/",
+            "AmuzThemes\\ApplicationInstall\\Database\\Factories\\": "src/database/factories/",
+            "AmuzThemes\\ApplicationInstall\\Database\\Seeders\\": "src/database/seeders/"
         }
     },
     "extra": {
