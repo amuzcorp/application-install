@@ -12,9 +12,12 @@ return [
         'app_name' => 'LG SMART CHECK',
         'app_description' => 'The beginning of a service that impresses customers more, A helper for accurate diagnosis and product repair.',
 
+        'layout_class' => 'bg-stone-300',
+
+        'feature_title_class' => 'text-rose-600',
         'feature_title' => 'Powerful performance',
         'feature_description' => 'It boasts excellent performance and safe security while providing many features.',
-
+        'feature_icon_class' => 'bg-rose-600',
         'features' => [
             [
                 'title' => 'Real-time diagnosis on-site',

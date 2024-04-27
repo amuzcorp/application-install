@@ -12,6 +12,9 @@
                 <div class="flex gap-x-12">
                     <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-sm font-semibold leading-6 text-gray-900">{{ item.name }}</a>
                 </div>
+                <div class="pl-12">
+                    <LanguageSelector />
+                </div>
             </nav>
         </header>
 
@@ -41,6 +44,7 @@
 </template>
 
 <script setup>
+import LanguageSelector from './LanguageSelector.vue';
 import {defineComponent, h} from 'vue'
 import {__} from "../translate";
 

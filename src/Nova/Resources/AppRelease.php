@@ -108,7 +108,7 @@ class AppRelease extends Resource
                     }
                 })->required()->help(__("The recommended format is '/applications/ios/1_0_0/info.plist' or '/applications/aos/1_0_0/app.apk'.")),
 
-            Markdown::make(__('Release Note'),"content"),
+            Markdown::make(__('Release Note'),"content")->fullWidth(),
 
             DateTime::make(__('Publish At'), "publish_at")
                 ->size('w-2/3')

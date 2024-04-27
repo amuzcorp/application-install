@@ -12,6 +12,14 @@
     "Release Note" : "릴리즈 노트",
     "Release Notes" : "릴리즈 노트",
 
+    "Install iOS" : "iOS 설치하기",
+    "Install Android" : "안드로이드 설치하기",
+    "Check for updated" : "업데이트 내용 보기",
+    "Do Install" : "설치 시작",
+    "Download APK" : "설치용 APK 다운로드",
+
+    "Features" : "주요 기능",
+
     "Stable Release" : "정식 릴리즈",
     "Beta Version" : "베타버전",
     "Development" : "개발버전",

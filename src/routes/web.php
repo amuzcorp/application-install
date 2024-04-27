@@ -8,7 +8,7 @@ Route::name('application-install.')
     ->controller(AppInstallController::class)
     ->group(function(){
         Route::get('/', 'index')->name('index');
-        Route::get('/releases', 'releases')->name('releases');
-        Route::get('/ios', 'ios')->name('ios');
-        Route::get('/android', 'android')->name('android');
+        Route::get('/releases/{releaseId?}', 'releases')->name('releases');
+        Route::get('/ios/{releaseId?}', 'ios')->name('ios');
+        Route::get('/android/{releaseId?}', 'android')->name('aos');
     });

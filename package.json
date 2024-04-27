@@ -3,5 +3,6 @@
     "devDependencies": {
     },
     "dependencies": {
+        "vue-markdown-render": "^2.1.1"
     }
 }

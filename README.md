@@ -45,3 +45,11 @@ composer require amuz/application-install:dev-main
 php artisan vendor:publish --tag=application-install-config
 php artisan vendor:publish --tag=application-install-migrations
 ```
+
+## Seed
+- 앱 릴리즈 모델이 어떻게 작성되고, 테마에 어떻게 반영되는지 확인하려면 아래 명령을 통해 릴리즈모델만 시드할 수 있습니다.
+- 이 작업을 위해 별도의 Model Factory 가 제공됩니다.
+
+```shell
+php artisan db:seed --class="AmuzThemes\ApplicationInstall\Database\Seeders\\AppReleaseSeeder"
+```
