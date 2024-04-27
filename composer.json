@@ -8,6 +8,9 @@
             "email": "ceo@amuz.co.kr"
         }
     ],
+    "require": {
+        "stepanenko3/nova-markdown": "*"
+    },
     "autoload": {
         "psr-4": {
             "AmuzThemes\\ApplicationInstall\\": "src/",

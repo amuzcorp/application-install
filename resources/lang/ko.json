@@ -6,8 +6,11 @@
     "Minimum OS Version" : "지원 OS 최소버전",
     "Version Code" : "버전코드",
     "Build Number" : "빌드번호",
+
     "Install URL" : "설치 URL",
+    "Install Home" : "설치 홈",
     "Release Note" : "릴리즈 노트",
+    "Release Notes" : "릴리즈 노트",
 
     "Stable Release" : "정식 릴리즈",
     "Beta Version" : "베타버전",

@@ -5,6 +5,7 @@ namespace AmuzThemes\ApplicationInstall;
 use AmuzThemes\ApplicationInstall\Nova\Resources\AppRelease;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Inertia\Inertia;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
 
@@ -36,7 +37,6 @@ class ApplicationInstallThemeProvider extends ServiceProvider
         ], 'application-install-migrations');
 
         $this->loadMigrationsFrom(__DIR__ .'/database/migrations');
-
 
         Nova::serving(function (ServingNova $event) {
             Nova::resources([

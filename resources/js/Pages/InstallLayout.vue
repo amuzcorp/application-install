@@ -45,8 +45,8 @@ import {defineComponent, h} from 'vue'
 import {__} from "../translate";
 
 const navigation = [
-    { name: 'Install Home', href: route('application-install.index') },
-    { name: 'Release Notes', href: route('application-install.releases') },
+    { name: __('Install Home'), href: route('application-install.index') },
+    { name: __('Release Notes'), href: route('application-install.releases') },
 ]
 
 const footerNavigation = [

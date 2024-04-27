@@ -6,6 +6,7 @@ use App\Services\SortsIndexEntries;
 use Illuminate\Support\Carbon;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\FormData;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
@@ -107,7 +108,7 @@ class AppRelease extends Resource
                     }
                 })->required()->help(__("The recommended format is '/applications/ios/1_0_0/info.plist' or '/applications/aos/1_0_0/app.apk'.")),
 
-            CkEditor::make(__('Release Note'),"content"),
+            Markdown::make(__('Release Note'),"content"),
 
             DateTime::make(__('Publish At'), "publish_at")
                 ->size('w-2/3')

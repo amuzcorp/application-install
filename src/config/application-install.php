@@ -15,6 +15,29 @@ return [
         'feature_title' => 'Powerful performance',
         'feature_description' => 'It boasts excellent performance and safe security while providing many features.',
 
+        'features' => [
+            [
+                'title' => 'Real-time diagnosis on-site',
+                'description' => 'Technicians can directly connect to the electronic devices via smartphone or tablet on-site and perform real-time diagnostics. This allows for immediate identification and timely intervention of any issues.',
+                'icon' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>'
+            ],
+            [
+                'title' => 'Optional firmware updates',
+                'description' => 'Technicians are provided with the option to update the firmware of the customer’s devices, keeping them up-to-date with the latest features and security patches. This helps maintain device stability and enhance customer satisfaction.',
+                'icon' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" /></svg>'
+            ],
+            [
+                'title' => 'Error code identification and corrective guides',
+                'description' => 'Quickly identifies error codes and provides corresponding corrective action guides, enabling technicians to efficiently resolve complex issues and reduce repair time.',
+                'icon' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>'
+            ],
+            [
+                'title' => 'Advanced data security',
+                'description' => 'All data transmissions are protected by strict security protocols, ensuring customer personal and device information is safeguarded. This minimizes security concerns during device handling and maintains customer trust.',
+                'icon' => '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>'
+            ]
+        ],
+
         'footer_symbol' => '<svg class="w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g fill="#eee"><path  d="M285.733 0c-98.106.52-179.409 79.548-182.556 177.6a182.918 182.918 0 0 0 53.685 135.835l50.313-50.279v-.034a112.1 112.1 0 0 1-32.713-86.775c3.516-55.71 48.5-101.02 104.18-104.913A112.5 112.5 0 0 1 383.78 240.476a8.472 8.472 0 0 0 1.313 10.293l39.148 39.148a8.534 8.534 0 0 0 13.017-1.114 182.791 182.791 0 0 0 33.082-105.159C470.339 81.869 387.6-.535 285.733 0" transform="translate(-31.081 71.999)"/></g><g fill="#aaa"><path  d="M351.917 120.128a8.535 8.535 0 0 1-1.114 13.012 182.769 182.769 0 0 1-105.159 33.082 183.158 183.158 0 0 1-129.867-53.782v-.034l50.313-50.279a112.117 112.117 0 0 0 79.553 32.942 111.721 111.721 0 0 0 56.828-15.406 8.48 8.48 0 0 1 10.3 1.317z" transform="translate(10.005 273.031)" /><path  d="M266.034 95.163a67.805 67.805 0 1 1-67.786-67.82 67.8 67.8 0 0 1 67.786 67.82" transform="translate(57.4 160.476)" /></g></svg>',
     ]
 ];
