@@ -22,6 +22,8 @@ class AppRelease extends Model implements Sortable
         return AppReleaseFactory::new();
     }
 
+    protected $guarded = [];
+
     public array $translatable = [
         'title',
     ];
