@@ -6,6 +6,7 @@ use AmuzThemes\ApplicationInstall\Models\AppRelease;
 use App\Http\Controllers\Controller;
 use Closure;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -101,6 +102,11 @@ class AppInstallController extends Controller
     public function android(Request $request, $releaseId = null): InertiaResponse
     {
         return $this->download($request,'aos',$releaseId);
+    }
+
+    public function checkUpdate(Request $request): JsonResponse
+    {
+        return response()->json($this->getLTS());
     }
 
     private function getReleaseQuery(): Builder

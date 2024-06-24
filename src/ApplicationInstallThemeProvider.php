@@ -53,5 +53,10 @@ class ApplicationInstallThemeProvider extends ServiceProvider
 
         Route::middleware(['theme:application-install', 'web'])
             ->group(__DIR__.'/routes/web.php');
+
+
+        Route::middleware(['api'])
+            ->prefix('api/application-install')
+            ->group(__DIR__.'/routes/api.php');
     }
 }
