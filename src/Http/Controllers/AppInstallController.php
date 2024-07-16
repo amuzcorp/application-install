@@ -120,9 +120,17 @@ class AppInstallController extends Controller
 
     private function getLTS(): array
     {
-        return [
+        $fromDb = [
             'ios' => $this->getReleaseQuery()->where('os_type','ios')->first(),
             'aos' => $this->getReleaseQuery()->where('os_type','aos')->first(),
         ];
+        $releases = [];
+        foreach($fromDb as $targetOS => $release){
+            $releaseNote = $release->getTranslation('content',app()->getLocale());
+            $release = $release->toArray();
+            $release['content'] = $releaseNote;
+            $releases[$targetOS] = $release;
+        }
+        return $releases;
     }
 }
