@@ -94,7 +94,7 @@
                         </div>
                         <div class="w-full">
                             <article class="prose max-w-none">
-                                <VueMarkdown :source="currentRelease['content']" class="pt-12" />
+                                <VueMarkdown :source="currentRelease['content'][$page.props.locale]" class="pt-12" />
                             </article>
                         </div>
                     </div>
