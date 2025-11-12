@@ -9,25 +9,25 @@
 
         <div>
             <div v-if="currentRelease === null"
-                 class=" w-full px-6 py-24 sm:py-32 lg:px-8 text-center text-gray-500">
+                 class="w-full px-4 sm:px-6 py-16 sm:py-24 lg:px-8 text-center text-gray-500">
                 Invalid Version or Not Registered Release
             </div>
             <div class="w-full">
-                <div class="border-b px-8 py-12 lg:px-8">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                <div class="border-b px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900">
                         {{ __('Install iOS') }}
                     </h2>
-                    <div class="mt-10 flex items-center gap-x-6">
+                    <div class="mt-6 sm:mt-8 lg:mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-x-6">
                         <a :href="currentRelease['install_url']"
-                           class="flex items-center rounded-md bg-gray-700 py-3 px-5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-4" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                           class="flex items-center justify-center rounded-lg bg-gray-700 py-3 px-5 text-base sm:text-sm font-semibold text-white shadow-lg hover:bg-gray-800 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-700 w-full sm:w-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 sm:mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
                             </svg>
                             {{ __('Do Install') }}
                         </a>
                         <a :href="route('application-install.releases',{
                             releaseId : currentRelease.id
-                        })" class="text-sm font-semibold leading-6 text-gray-900">
+                        })" class="text-center sm:text-left text-base sm:text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700 transition-colors py-2 sm:py-0">
                             {{ __('Check for updated') }} <span aria-hidden="true">→</span>
                         </a>
                     </div>

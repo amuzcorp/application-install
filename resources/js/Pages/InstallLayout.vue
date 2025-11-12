@@ -2,20 +2,93 @@
     <div class="bg-white">
         <!-- Header -->
         <header class="absolute inset-x-0 top-0 z-50">
-            <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-                <div class="flex lg:flex-1">
+            <nav class="flex items-center justify-between p-4 sm:p-6 lg:px-8" aria-label="Global">
+                <div class="flex flex-1 lg:flex-1">
                     <a :href="$page.props.frontConfig['home_url']" class="-m-1.5 p-1.5">
                         <span class="sr-only">{{ $page.props.frontConfig['company_name'] }}</span>
-                        <div class="h-8 max-w-52" v-html="$page.props.frontConfig['logo_src']" />
+                        <div class="h-6 sm:h-8 max-w-40 sm:max-w-52" v-html="$page.props.frontConfig['logo_src']" />
                     </a>
                 </div>
-                <div class="flex gap-x-12">
-                    <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-sm font-semibold leading-6 text-gray-900">{{ item.name }}</a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex gap-x-6 lg:gap-x-8 xl:gap-x-12">
+                    <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700 transition-colors whitespace-nowrap">{{ item.name }}</a>
                 </div>
-                <div class="pl-12">
+
+                <div class="flex items-center gap-x-3 sm:gap-x-4">
+                    <!-- Language Selector (always visible) -->
                     <LanguageSelector />
+                    <!-- Mobile menu button -->
+                    <button
+                        type="button"
+                        class="md:hidden -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-gray-100 transition-colors"
+                        @click="mobileMenuOpen = true"
+                    >
+                        <span class="sr-only">메뉴 열기</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+
                 </div>
             </nav>
+
+            <!-- Mobile menu (off-canvas) -->
+            <Transition
+                enter-active-class="transition-opacity duration-300 ease-out"
+                enter-from-class="opacity-0"
+                enter-to-class="opacity-100"
+                leave-active-class="transition-opacity duration-200 ease-in"
+                leave-from-class="opacity-100"
+                leave-to-class="opacity-0"
+            >
+                <div v-if="mobileMenuOpen" class="fixed inset-0 z-50 md:hidden">
+                    <!-- Backdrop -->
+                    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm" @click="mobileMenuOpen = false" />
+
+                    <!-- Off-canvas menu -->
+                    <Transition
+                        enter-active-class="transition-transform duration-300 ease-out"
+                        enter-from-class="translate-x-full"
+                        enter-to-class="translate-x-0"
+                        leave-active-class="transition-transform duration-200 ease-in"
+                        leave-from-class="translate-x-0"
+                        leave-to-class="translate-x-full"
+                    >
+                        <div v-if="mobileMenuOpen" class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                            <div class="flex items-center justify-between">
+                                <a :href="$page.props.frontConfig['home_url']" class="-m-1.5 p-1.5">
+                                    <span class="sr-only">{{ $page.props.frontConfig['company_name'] }}</span>
+                                    <div class="h-6 sm:h-8 max-w-40 sm:max-w-52" v-html="$page.props.frontConfig['logo_src']" />
+                                </a>
+                                <button
+                                    type="button"
+                                    class="-m-2.5 rounded-md p-2.5 text-gray-700 hover:bg-gray-100 transition-colors"
+                                    @click="mobileMenuOpen = false"
+                                >
+                                    <span class="sr-only">메뉴 닫기</span>
+                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-6 flow-root">
+                                <div class="space-y-2 py-6">
+                                    <a
+                                        v-for="item in navigation"
+                                        :key="item.name"
+                                        :href="item.href"
+                                        class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-colors"
+                                        @click="mobileMenuOpen = false"
+                                    >
+                                        {{ item.name }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </Transition>
+                </div>
+            </Transition>
         </header>
 
         <main>
@@ -25,18 +98,18 @@
         <!-- Footer -->
         <footer class="bg-gray-900" aria-labelledby="footer-heading">
             <h2 id="footer-heading" class="sr-only">Footer</h2>
-            <div class="mx-auto max-w-7xl px-6 pb-8 pt-8 sm:pt-12 lg:px-8 lg:pt-16">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8 pt-6 sm:pt-8 lg:pt-12">
                 <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-                    <div class="h-12 max-w-12" v-html="$page.props.frontConfig['footer_symbol']" />
+                    <div class="h-10 sm:h-12 max-w-10 sm:max-w-12" v-html="$page.props.frontConfig['footer_symbol']" />
                 </div>
-                <div class="mt-8 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
-                    <div class="flex space-x-6 md:order-2">
-                        <a v-for="item in footerNavigation" :key="item.name" :href="item.href" class="text-gray-500 hover:text-gray-400">
+                <div class="mt-6 sm:mt-8 border-t border-white/10 pt-6 sm:pt-8 md:flex md:items-center md:justify-between">
+                    <div class="flex justify-center md:justify-start space-x-6 md:order-2">
+                        <a v-for="item in footerNavigation" :key="item.name" :href="item.href" class="text-gray-500 hover:text-gray-400 transition-colors">
                             <span class="sr-only">{{ item.name }}</span>
                             <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
                         </a>
                     </div>
-                    <p class="mt-8 text-xs leading-5 text-gray-400 md:order-1 md:mt-0">&copy; 2024 Amuz CO.,LTD. All rights reserved.</p>
+                    <p class="mt-6 sm:mt-8 text-xs sm:text-sm leading-5 text-gray-400 text-center md:text-left md:order-1 md:mt-0">&copy; 2024 Amuz CO.,LTD. All rights reserved.</p>
                 </div>
             </div>
         </footer>
@@ -45,8 +118,10 @@
 
 <script setup>
 import LanguageSelector from './LanguageSelector.vue';
-import {defineComponent, h} from 'vue'
+import {defineComponent, h, ref} from 'vue'
 import {__} from "../translate";
+
+const mobileMenuOpen = ref(false)
 
 const navigation = [
     { name: __('Install Home'), href: route('application-install.index') },
