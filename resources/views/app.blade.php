@@ -15,6 +15,11 @@
                 ])
         @inertiaHead
     </head>
+    <script>
+        window.Laravel = {
+            APP_DOMAIN: "{{ config('app.domain') }}"
+        };
+    </script>
     <body class="font-sans antialiased">
         @inertia
     </body>
