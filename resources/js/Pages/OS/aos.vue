@@ -54,7 +54,7 @@
               </a>
 
               <a
-                v-if="IS_PROD || IS_TEST"
+                v-if="!IS_DEV"
                 :href="`https://s3-an2-service-diagnostics-archive-prd.s3.ap-northeast-2.amazonaws.com/deployment/applications/android/${currentRelease['version_code']}/aos.apk')`"
                 class="text-sm font-semibold leading-6 text-gray-900"
               >
@@ -80,8 +80,7 @@ const props = defineProps({
 import Download from "@application-install/Pages/Download.vue";
 
 const APP_DOMAIN = window?.Laravel?.APP_DOMAIN ?? "dev";
-const IS_PROD = APP_DOMAIN.includes("dev");
-const IS_TEST = APP_DOMAIN.includes("test");
+const IS_DEV = APP_DOMAIN.includes("dev");
 
-const downloadLabel = IS_PROD ? __("Download APK") : __("Go to Playstore");
+const downloadLabel = IS_DEV ? __("Download APK") : __("Go to Playstore");
 </script>
