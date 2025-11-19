@@ -55,7 +55,7 @@
 
               <a
                 v-if="!IS_DEV"
-                :href="`https://s3-an2-service-diagnostics-archive-prd.s3.ap-northeast-2.amazonaws.com/deployment/applications/android/${currentRelease['version_code']}/aos.apk')`"
+                :href="`https://s3-an2-service-diagnostics-archive-prd.s3.ap-northeast-2.amazonaws.com/deployment/applications/android/${currentRelease['version_code']}/aos.apk`"
                 class="text-sm font-semibold leading-6 text-gray-900"
               >
                 {{ __("Download APK") }} <span aria-hidden="true">→</span>
