@@ -126,6 +126,11 @@ class AppInstallController extends Controller
         ];
         $releases = [];
         foreach($fromDb as $targetOS => $release){
+            if ($release === null) {
+                $releases[$targetOS] = null;
+                continue;
+            }
+
             $releaseNote = $release->getTranslation('content',app()->getLocale());
             $release = $release->toArray();
             $release['content'] = $releaseNote;
