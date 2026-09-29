@@ -12,6 +12,8 @@ use Spatie\Translatable\HasTranslations;
 
 class AppRelease extends Model implements Sortable
 {
+    use \App\Audit\AuditsChanges;
+
     use HasFactory;
     use HasUuids;
     use SortableTrait;
